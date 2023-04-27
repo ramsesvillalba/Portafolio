@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "colorthief": "^2.4.0",
+    "vibrant": "^0.0.1"
+  }
+}
