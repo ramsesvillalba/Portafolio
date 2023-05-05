@@ -1,5 +1,6 @@
 /* Estilos generales */
 body {
+  z-index: -50;
 	background: black;
 	color: white;
 	font-family: sans-serif;
@@ -10,15 +11,48 @@ body {
 }
 
 /* animacion XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+.circle-none{
+  display: none;
+}
+.circle{
+  left: 200px;
+  right: 100px;
+  border-radius: 50%;
+  filter:blur(570px);
+  z-index: -12;
+  position: fixed;
+  background-color: #ff0000;
+  transition: 0.3s;
+  display: flex;
+  opacity: 0%;
+  bottom: 430px;
+  animation:burst1 40s infinite;
+  animation-delay: 18s;
+  width: 1500px;
+  height: 1500px;
+}
 
+@keyframes burst1{
+  0%{
+    transition: 3s;
+  }
+  50%{
+    transform: scale(1.4);
+    opacity: 20%;
+  }
 
+  55%{
+    transform: scale();
+    opacity: 0;
+  }
+}
 
 
 /* Estilos del header */
 header {
   z-index: 50;
     position: absolute;
-	background-color: #222;
+	background-color: transparent;
 	padding: 20px;
 	display: flex;
 	justify-content: space-between;
@@ -30,8 +64,10 @@ header {
 }
 
 .logo img {
-	max-width: 100%;
+	max-width: 48px;
 	height: auto;
+  margin: 0 0 0 70px;
+  padding: 0;
 }
 
 nav ul {
@@ -54,11 +90,13 @@ nav ul li a {
 	text-decoration: none;
 	padding: 10px;
 	border-radius: 5px;
-	transition: background-color 0.3s ease;
+	transition: 0.2s;
+  font-size: 18px;
 }
 
 nav ul li a:hover {
-	background-color: #e60000;
+  color: #ff0000;
+  filter: brightness(200%);
 }
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* Primer section */
@@ -86,18 +124,23 @@ nav ul li a:hover {
     padding: 4px;
   }
 
-  .servicios__texto h1 {
-    font-size: 3rem;
+  .servicios__texto h2 {
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 20px;
+    text-align: left;
+
   }
   
   .servicios__texto p {
     font-size: 1.5rem;
     line-height: 2.5rem;
-    text-align: justify;
+    text-align: left;
     margin-right: 30px;
   }
+
+/* SECTION TITLE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
 
   @media (max-width:748px){
     .section-title .div-title h1{
@@ -120,6 +163,7 @@ nav ul li a:hover {
 }
 
 .section-title{
+  flex-direction: column;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -141,6 +185,16 @@ nav ul li a:hover {
 }
 
 
+.title-dark{
+  color: #000;
+  font-size: 40px;
+  margin: 0;
+  pointer-events: none;
+  padding: 0;
+  top: 80px;
+  position: relative;
+  font-family: Impact;
+}
 .section-title h1{
   font-size: 160px;
   font-weight:lighter;
@@ -399,7 +453,7 @@ nav ul li a:hover {
 form {
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a;
+  background-color: transparent;
   color: #fff;
   width: 90%;
   max-width: 620px;
@@ -427,15 +481,23 @@ textarea {
   width: 100%;
   padding: 10px;
   background-color: transparent;
-  border: 2px solid #ff0000;
+  border: 2px solid #770000;
   border-radius: 5px;
   color: #fff;
   outline: none;
   margin-top: 5px;
+  transition: 0.4s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #ff0000;
+  
 }
 
+
 input[type="submit"] {
-  background-color: #b60000;
+  background-color: #770000;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -473,9 +535,12 @@ footer {
 }
 
 .social-icons img {
-  filter: brightness(150%) saturate(200%);
+  filter:saturate(200%);
   width: 34px;
   height: 34px;
+}
+.social-icons img:hover{
+  filter: brightness(250%);
 }
 
 .container-logo{

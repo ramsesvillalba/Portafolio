@@ -1,3 +1,7 @@
+const bodyred = document.querySelector(".circle-none")//seleccionamos el circulo rojo de fondo
+
+bodyred.classList.remove('.circle-none')
+
 // función que cambia el fondo del body a los colores dominantes de la imagen a la que se le hace hover
 function cambiarFondo(event) {
   const colorThief = new ColorThief(); // creamos una nueva instancia de la biblioteca ColorThief
@@ -7,10 +11,12 @@ function cambiarFondo(event) {
 
   const colorDominante = colorThief.getColor(img); // obtenemos el color dominante de la imagen
   const colores = colorThief.getPalette(img); // obtenemos la paleta de colores de la imagen
-
+  
+  //desactivamos el circulo rojo
   // cambiamos el fondo del body a los colores dominantes de la imagen
   document.body.style.background = `rgb(${colorDominante.join(", ")})`;
-  document.body.style.transition = "background-color 0.5s ease-in-out";
+  document.body.style.transition = "background-color 0.2s ease-in-out";
+  bodyred.classList.add(".circle-none")
 
   // cambiamos el fondo del body a los dos colores dominantes de la imagen
   // puedes ajustar la cantidad de colores que deseas obtener cambiando el número 2
@@ -24,4 +30,5 @@ function cambiarFondo(event) {
 // función que restaura el fondo del body a negro cuando el cursor sale de la imagen
 function restaurarFondo() {
   document.body.style.background = "black";
+  bodyred.classList.remove('.circle-none')
 }
