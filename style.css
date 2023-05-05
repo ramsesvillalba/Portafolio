@@ -26,8 +26,8 @@ body {
   display: flex;
   opacity: 0%;
   bottom: 430px;
-  animation:burst1 40s infinite;
-  animation-delay: 18s;
+  animation:burst1 20s infinite;
+  animation-delay: 6s;
   width: 1500px;
   height: 1500px;
 }
