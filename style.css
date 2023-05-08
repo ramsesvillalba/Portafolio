@@ -25,9 +25,9 @@ body {
   transition: 0.3s;
   display: flex;
   opacity: 0%;
-  bottom: 430px;
+  top: 430px;
   animation:burst1 20s infinite;
-  animation-delay: 6s;
+  animation-delay: 4s;
   width: 1500px;
   height: 1500px;
 }
@@ -191,7 +191,7 @@ nav ul li a:hover {
   margin: 0;
   pointer-events: none;
   padding: 0;
-  top: 80px;
+  bottom: 80px;
   position: relative;
   font-family: Impact;
 }
