@@ -106,7 +106,7 @@ nav ul li a:hover {
     height: 100vh;
     background-color: #1d1d1d;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 0 50px;
     color: #fff;
@@ -114,9 +114,9 @@ nav ul li a:hover {
   }
   
   .servicios__contenido img {
-    width: 50%;
-    height: 70%;
-    object-fit: cover;
+    border-radius: 50%;
+    height: 50%;
+    border: solid 2px red;
   }
   
   .servicios__texto {
@@ -228,9 +228,11 @@ nav ul li a:hover {
     align-items: center;
     display: flex;
     height: 100vh;
+    position: relative;
   }
 
   .services {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -244,13 +246,17 @@ nav ul li a:hover {
   }
   
   .service {
-    width: 300px;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    width: 280px;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
     height: 400px;
-    background-color: #292929;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   }
   
   .service img {
@@ -263,17 +269,142 @@ nav ul li a:hover {
     font-size: 24px;
     font-weight: bold;
     margin: 20px 0;
+    text-align: start;
   }
   
   .service p {
     font-size: 16px;
     margin: 20px 0;
+    text-align: start;
+    font-weight: bold;
   }
 
   .service-desc{
     width: 480px;
     text-align: center;
   }
+
+  .services .service::before{
+    content: "";
+    display: inline-block;
+    top: 0;
+    right: 50px;
+    width: 200px;
+    position: absolute;
+    height: 480px;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.4s;
+}
+
+.services .service::after{
+  content: "";
+  display: inline-block;
+  top: 0;
+  right: 50px;
+  width: 200px;
+  position: absolute;
+  height: 480px;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.4s;
+  filter: blur(30px);
+}
+.services .service:hover:before, 
+.services .service:hover:after{
+  left: 40px;
+  transform: skewX(0deg);
+  width: calc(100% - 90px);
+}
+.services .service:before, 
+.services .service:after{
+  background:linear-gradient(315deg,rgb(41, 0, 0),rgb(255, 0, 0)) ;
+}
+.service .service-content{
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  z-index: 10;
+  background: rgb( 255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.2);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  transition: 0.5s;
+}
+
+.service:hover .service-content{
+  left: -10px;
+  padding: 60px 40px;
+}
+
+.service span{
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.service span::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color:rgb( 255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.4s;
+  animation: animationSpan 2.7s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.2);
+}
+
+.service:hover span::before{
+  top: -50px;
+  left: 80px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+@keyframes animationSpan{
+  0%,100%{
+    transform: translateY(5px);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+}
+
+.service span::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color:rgb( 255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.4s;
+  animation: animationSpan 2.7s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.service:hover span::after{
+  bottom: -100px;
+  right: 40px;
+  width: 140px;
+  height: 140px;
+  opacity: 1;
+}
 
 
   /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
