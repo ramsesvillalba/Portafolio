@@ -20,9 +20,12 @@
     </a>
     <nav>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Sobre Mi</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#section-title">Inicio</a></li>
+            <li><a href="#servicios__contenido">Sobre Mi</a></li>
+            <li><a href="#section-services">Servicios</a></li>
+            <li><a href="#portfolio">Portafolio</a></li>
+            <li><a href="#section-skills">Herramientas</a></li>
+            <li><a href="#section-form">Contacto</a></li>
         </ul>
     </nav>
 	</header>
@@ -34,7 +37,7 @@
 <main>
   
 	<!-- Aquí irá el contenido principal -->
-    <section class="section-title" >
+    <section class="section-title" id="section-title">
       <div class="div-title">  
           <h1 style="--l: 'R';">R</h1>
           <h1 style="--l: 'A';">A</h1>
@@ -43,7 +46,6 @@
           <h1 style="--l: 'E';">E</h1>
           <h1 style="--l: 'S';">S</h1> 
       </div>
-      <h4 class="title-dark">DESARROLLADOR WEB</h4>
     </section>
 
 
@@ -60,7 +62,7 @@
 
 
 
-      <section class="servicios__contenido">
+      <section class="servicios__contenido" id="servicios__contenido">
         <div class="photo-hover">
           <div class="content-photo">
             <img src="media\photo.png" alt="">
@@ -85,7 +87,7 @@
 
 
 
-    <section class="section-services">
+    <section class="section-services" id="section-services">
       <h1 class="service-title">Mis servicios web</h1>
       <h2 class="service-desc">Ofrezco servicios de desarrollo web personalizados para cubrir las necesidades de cada cliente, con énfasis en la calidad y la satisfacción del usuario final. Estoy aquí para ayudarte a lograr tu visión en línea.</h2>
       <section class="services">
@@ -136,7 +138,7 @@
       <div class="portfolio-info">
         <h3 class="portfolio-title">Mi primer proyecto</h3>
         <p class="portfolio-description">Pequeño proyecto con el que empecé en css.</p>
-        <a href="#" class="btn">Ver sitio</a>
+        <a href="https://ramsesvillalba.github.io/Ramses-Programa/" class="btn">Ver sitio</a>
       </div>
     </div>
     
@@ -145,7 +147,7 @@
       <div class="portfolio-info">
         <h3 class="portfolio-title">Clon de Google</h3>
         <p class="portfolio-description">Un clon de Google hecho en CSS con ayuda de Figma</p>
-        <a href="#" class="btn">Ver sitio</a>
+        <a href="https://ramsesvillalba.github.io/Google-s-clon/" class="btn">Ver sitio</a>
       </div>
     </div>
     
@@ -154,15 +156,15 @@
       <div class="portfolio-info">
         <h3 class="portfolio-title">Cafetería</h3>
         <p class="portfolio-description">Un ejemplo de una landing de un cafetería hecho con Elementor</p>
-        <a href="#" class="btn">Ver sitio</a>
+        <a href="cafeteriaramses.tk/" class="btn">Ver sitio</a>
       </div>
     </div>
     
     <div class="portfolio-item magic-wind">
-      <img src="image4.jpg" alt="Portfolio item 4" class="portfolio-image">
+      <img src="media\item4.jpg" alt="Portfolio item 4" class="portfolio-image">
       <div class="portfolio-info">
-        <h3 class="portfolio-title">Portfolio Item 4</h3>
-        <p class="portfolio-description">Description of Portfolio Item 4</p>
+        <h3 class="portfolio-title">Psicóloga Martha</h3>
+        <p class="portfolio-description">Una landing creada con la plataforma Carrd.</p>
         <a href="#" class="btn">Ver sitio</a>
       </div>
     </div>
@@ -201,7 +203,7 @@
 
 
 
-<section class="section-skills">
+<section class="section-skills" id="section-skills">
   <h1 >Mis herramientas</h1>
   <div class="logo-container">
     <div class="team-1 teams">
@@ -249,9 +251,9 @@
 
 
 
-<section class="section-form">
+<section class="section-form" id="section-form">
   <h2>Contacta conmigo</h2>
-  <form>
+  <form action="https://formsubmit.co/facundoramsesgastonvillalba@gmail.com" method="POST">
     <div class="form-group">
       <label for="nombre">Nombre</label>
       <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
